@@ -118,7 +118,9 @@ function fillData(extD,opts) {
     //输出景点门票
     if(extD.src_name && extD.src_name =='scope' && (extD.rich_info.shop_hours || extD.detail_info.entrance_price)){
         //showViewSpotPrice(extD, opts);
-        var price = new window.BMap.Viewspot.Price(document.getElementById('viewSpotPrice'), extD, opts);
+        var price = new window.BMap.Viewspot.Price(document.getElementById('viewSpotPrice'), opts);
+        price.setData("门票：门票：成人10元，学生5元。联票：成人25元，学生10元。<br />开放时间：7：00-19：00");
+        price.setUrl("http://lvyou.baidu.com/yuanmingyuan/");
     }
 
     //输出景点游记攻略模块

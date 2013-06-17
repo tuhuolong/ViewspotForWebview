@@ -229,68 +229,76 @@ BMap.Viewspot.Telephone = function(container, option)
     }
 }
 
-BMap.Viewspot.Price = function(container, extD, option)
+BMap.Viewspot.Price = function(container, option)
 {   
     var _container = container;
-    var _extD = extD;
     var _option = option ? option : {};
+
+    var _dom = {};
+    var _getDom = function(){return _dom;};
+
+    var _titleDiv = {};
+    var _boxDiv = {};
+
+    var _box1Div = {};
+    var _box2Div = {};
+
+    var _box21Div = {};
+    var _box21Span = {};
+
+    var _moreA = {};
+
+    var _setData = function(data) {
+        _box1Div.innerHTML = data;
+    }
+
+    var _setUrl = function(url) {
+        _moreA.href = url;
+    }
 
     var _initialize = function() {
 
-        var data = extD.rich_info,
-        html = [];
-        
-        showViewSpotPrice.price = showViewSpotPrice.price || data.entrance_price || data.shop_hours;
-        var houerData = "", priceData = "";
-               
-        if(extD.detail_info.entrance_price){
-            priceData = '门票：' + extD.detail_info.entrance_price + '<br />';
-        }
+        _dom = document.createElement('div');
 
+        _titleDiv = document.createElement('div');
+        _titleDiv.className = "h3";
+        _dom.appendChild(_titleDiv);
 
-        if(data.shop_hours){
-            houerData = '开放时间：' + data.shop_hours;
-        }
+        _boxDiv = document.createElement('div');
+        _boxDiv.className = "box_1";
+        _dom.appendChild(_boxDiv);
 
+        _box1Div = document.createElement('div');
+        _box1Div.className = "box";
+        _boxDiv.appendChild(_box1Div);
 
-        var allData = '<div onclick="ShowAndHidden(this, \'\', \'hiddenprice\');">' + priceData + houerData + '<span class="kongBtn"></span><span class="hiddenBtn">点击收起<span></span></span></div>'; 
+        _box2Div = document.createElement('div');
+        _box2Div.className = "bottom_nav bottom_nav_1";
+        _boxDiv.appendChild(_box2Div);
 
-        var shortData = priceData + houerData,
-            data_leng = shortData.length >160 ? 160 : shortData.length;
+        _box21Div = document.createElement('div');
+        _box2Div.appendChild(_box21Div);
 
-        if(shortData.length > 160){
-            shortData = shortData.slice(0, data_leng) + '...<span class="kongBtn"></span><span class="showBtn">点击展开<span></span></span>';
-            shortData = '<div onclick="ShowAndHidden(this, \'show\', \'showprice\');">'+ shortData + '</div>';
-        }
-        
-        html.push('<div class="h3">门票和开放时间</div>');
-        html.push('<div class="box_1">');
-        html.push('<div class="box">' + shortData + '</div>');
-        html.push('<div class="box" style="display:none;">' + allData + '</div>');
+        _box21Span = document.createElement('span');
+        _box21Div.appendChild(_box21Span);
 
-        if(extD.detail_info && extD.detail_info.link && extD.detail_info.link.length){
-            
-            for(var i=0,len = extD.detail_info.link.length; i<len; i++){
-                var url_mb = extD.detail_info.link[i].url_mb || extD.detail_info.link[i].url;
-                if(extD.detail_info.link[i].name && extD.detail_info.link[i].name == "baidulvyou" && url_mb){
-                    html.push('<div class="bottom_nav bottom_nav_1"><div><span><a href="' + url_mb + '" onclick="addStat('+ STAT_STRATEGY_ALL_1 + ');">查看更多攻略<em class="goto_icon_1"></em></a></span></div></div>');
-                }
-            }
-        }
+        _moreA = document.createElement('a');
+        _moreA.innerHTML = "查看更多攻略<em class=\'goto_icon_1\''></em>"
+        _box21Span.appendChild(_moreA);
 
-        html.push('</div>');
-
-        _container.innerHTML = html.join('');
-        _container.style.display = 'block';
-
+        _container.appendChild(_dom);
+        _container.style.display = '';
     };
 
     (function() {
         _initialize();
     })();
     
-    // 对外接口
-    return ;
+    return {
+        getDom : _getDom,
+        setData : _setData,
+        setUrl : _setUrl
+    }
 }
 
 BMap.Viewspot.Strategy = function(container, extD, option)
