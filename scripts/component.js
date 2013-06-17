@@ -307,74 +307,118 @@ BMap.Viewspot.Strategy = function(container, extD, option)
     var _extD = extD;
     var _option = option ? option : {};
 
+    var _dom = {};
+    var _getDom = function(){return _dom;};
+
+    var _titleDiv = {};
+    var _box1Div = {};
+    var _contentUl = {};
+    var _bottomDiv = {};
+    var _bottomSubDiv = {};
+    var _bottomSpan = {};
+    var _bottomA = {};
+
+    var _setUrl = function(url) {
+        _bottomA.href = url;
+    }
+
+    var _addDataItem = function() {
+        var itemLi = document.createElement('li');
+
+        var titDiv = document.createElement('div');
+        titDiv.className = "tit";
+        titDiv.innerHTML = "【我们出发吧】消失的离宫--圆明园";
+        itemLi.appendChild(titDiv);
+
+        var lineDiv = document.createElement('div');
+        lineDiv.className = "line";
+        lineDiv.innerHTML = "北京圆明园";
+        itemLi.appendChild(lineDiv);
+
+        var classifyDiv = document.createElement('div');
+        classifyDiv.className = "classify";
+        var priceSpan = document.createElement('span');
+        priceSpan.className = "price";
+        priceSpan.innerHTML = "0元";
+        var timeSpan = document.createElement('span');
+        timeSpan.className = "time";
+        timeSpan.innerHTML = "2012年09月";
+        var daysSpan = document.createElement('span');
+        daysSpan.className = "days";
+        daysSpan.innerHTML = "1天";
+        classifyDiv.appendChild(priceSpan);
+        classifyDiv.appendChild(timeSpan);
+        classifyDiv.appendChild(daysSpan);
+        itemLi.appendChild(classifyDiv);
+
+        var contentDiv = document.createElement('div');
+        contentDiv.className = "content";
+        contentDiv.innerHTML = "...……，不管怎么去痛恨那些侵略者还是当时的清政府，都已成为历史已成为过去，对与错是与非相信世人都会站在正义的一方来公正评价，只是多了一些遗憾。这里引用了一首诗《圆明园，我想对你说》，出处忘记了，不过写的很好在这里与大家分享。圆明园，我想对你说 明园呀！...";
+        var showSpan = document.createElement('span');
+        showSpan.className = "showBtn";
+        showSpan.innerHTML = "查看全文";
+        contentDiv.appendChild(showSpan);
+        itemLi.appendChild(contentDiv);
+
+        var linkDiv = document.createElement('div');
+        linkDiv.className = "link";
+        var span1 = document.createElement('span');
+        span1.innerHTML = "来自百度旅游";
+        linkDiv.appendChild(span1);
+        var span2 = document.createElement('span');
+        span2.className = "release_time";
+        span2.innerHTML = "12-09-18";
+        linkDiv.appendChild(span2);
+        itemLi.appendChild(linkDiv);
+
+        _contentUl.appendChild(itemLi);
+    }
+
     var _initialize = function() {
-        var data = extD.strategy.strategy_detail,
-            html = [];
-     
-        html.push('<div class="h3">精彩游记</div>');
-        html.push('<div class="box_1"><ul>');
-        for(var i=0,len=data.length; i<len; i++){
-            html.push('<li onclick="openLink(\'' + data[i].link_mb + '\', ' +  STAT_STRATEGY_LIST  + ')">');
-            if(data[i].title){
-                html.push('<div class="tit">' + data[i].title + '</div>');
-            }
-            if(data[i].line){
-                html.push('<div class="line">' + data[i].line + '</div>');
-            }
-            html.push('<div class="classify">');
-            if(data[i].price){
-                html.push('<span class="price">'+data[i].price+'</span>')
-            }
-            if(data[i].time){
-                html.push('<span class="time">'+data[i].time+'</span>')
-            }
-            if(data[i].days){
-                html.push('<span class="days">'+data[i].days+'</span>')
-            }
-            html.push('</div>');
 
-            if(data[i].content){
-                var shortData =data[i].content,
-                data_leng = shortData.length >150 ? 150 : shortData.length;
+        _dom = document.createElement('div');
 
-                //字数超过150个字后，进行裁剪;
-                if(shortData.length >150){
-                    shortData = shortData.slice(0,data_leng) + '...';
-                }
-                html.push('<div class="content">' + shortData + '<span class="showBtn">查看全文<span></div>');
-            }
-            if(data[i].link && data[i].link.indexOf('lvyou.baidu') > -1){
-                html.push('<div class="link"><span>来自百度旅游</span>');
-                if(data[i].release_time){
-                    html.push('<span class="release_time">' + data[i].release_time + '</span>');
-                }
-                html.push('</div>');
-            }
-            html.push('</li>') 
-                if(i == 3){
-                    break;
-                }  
-        }
-        html.push('</ul>');
-        if(extD.strategy.total_link_mb){
-            html.push('<div class="bottom_nav bottom_nav_1"><div><span><a href="' + extD.strategy.total_link_mb + '" onclick="addStat('+ STAT_STRATEGY_ALL + ');">查看更多游记<em class="goto_icon_1"></em></a></span></div></div>');
-        }
-        html.push('</div>');
-        html.push('<div class="splitLine2"></div>');
+        _titleDiv = document.createElement('div');
+        _titleDiv.className = "h3";
+        _titleDiv.innerHTML = "精彩游记";
+        _dom.appendChild(_titleDiv);
 
-        _container.innerHTML = html.join('');
+        _box1Div = document.createElement('div');
+        _box1Div.className = "box_1"; 
+        _dom.appendChild(_box1Div);
 
+        _contentUl = document.createElement('ul'); 
+        _box1Div.appendChild(_contentUl);
+
+        _bottomDiv = document.createElement('div');
+        _bottomDiv.className = "bottom_nav bottom_nav_1";
+        _box1Div.appendChild(_bottomDiv);
+
+        _bottomSubDiv = document.createElement('div');
+        _bottomDiv.appendChild(_bottomSubDiv);
+
+        _bottomSpan = document.createElement('span');
+        _bottomSubDiv.appendChild(_bottomSpan);
+
+        _bottomA = document.createElement('a');
+        _bottomA.innerHTML = "查看更多游记<em class=\'goto_icon_1\''></em>";
+        _bottomSpan.appendChild(_bottomA);
+
+        _container.appendChild(_dom);
         _container.style.display = 'block';
-
     };
 
     (function() {
         _initialize();
     })();
     
-    // 对外接口
-    return ;
+    return {
+        getDom : _getDom,
+        addDataItem : _addDataItem,
+        setUrl : _setUrl
+    }
 }
+
 
 BMap.Viewspot.NearbySearch = function(container, extD, option)
 {   

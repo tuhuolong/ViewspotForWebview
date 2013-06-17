@@ -127,6 +127,8 @@ function fillData(extD,opts) {
     if(extD.src_name && extD.src_name =='scope' && extD.strategy && extD.strategy.strategy_detail && extD.strategy.strategy_detail.length){
         //showViewStrategy(extD, opts);
         var strategy = new window.BMap.Viewspot.Strategy(document.getElementById('viewStrategy'), extD, opts);
+        strategy.setUrl("http://lvyou.baidu.com/yuanmingyuan/youji/");
+        strategy.addDataItem();
     }
 
     //输出附近查找 by fuen
