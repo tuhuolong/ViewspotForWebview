@@ -1,0 +1,79 @@
+.bctop-title {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    padding: 8px 10px 6px;
+}
+.bctop-title dl {
+    -webkit-box-flex: 1;
+}
+.bctop dl,
+.bctop dt,
+.bctop dd {
+    margin:0;
+    padding: 0;
+}
+.bctop-title dt {
+    color: #333;
+}
+.bctop dd {
+    font-size: 12px;
+    margin-top: 5px;
+}
+.bctop .bctop-btn-toggle {
+    display: block;
+    width: 16px;
+    background:url("../img/ktv_select.png") no-repeat 0 0;
+    background-size: 16px 16px;
+}
+.bctop .collapse .bctop-btn-toggle {
+    -webkit-transform: rotate(180deg);
+}
+.bctop-content li em,
+.bctop-title dt em {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-color: #ff3535;
+    border-radius: 8px; 
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    font-style: normal;
+    margin-left: 3px;
+    position: relative;
+    top: -1px;
+}
+.bctop-content {  
+    position: relative;
+    border-top: 1px solid #d6d1c9;
+    padding: 0 6px;
+}
+.bctop-content li {
+    display: -webkit-box;
+    padding: 8px 0;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    border-bottom: 1px solid #a9a6a0;
+    -webkit-border-image: url("../img/line.png") repeat;
+    -webkit-border-image-slice: 0 0 100% 0;
+    border-image: url("../img/line.png") repeat;
+    border-image-slice: 0 0 100% 0;
+}
+.bctop-content li:last-child {
+    border-bottom: none;
+    border-width: 0px;
+}
+.bctop-content ul li em {
+    margin: 0 7px 0 4px;
+}
+.bctop-content li dl {
+    -webkit-box-flex: 1;
+}
+.bctop-content dl dt {
+    font-size: 16px;
+    color: #333;
+}
+.bctop-content dl dd {
+    margin-top: 3px;
+}

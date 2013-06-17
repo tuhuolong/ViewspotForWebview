@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>活动详情页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/detail.css?v=12" rel="stylesheet" type="text/css" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        #joinBox{position:relative;padding:9px 14px;overflow:hidden;height:19px;line-height:19px;}
+        .goDouban{position:absolute;top:12px;right:10px;}
+        .activePro{padding:8px 10px;margin-bottom:15px;}
+        #active_imgBox .box_1{padding:5px 5px;}
+        .activeImg{width:100%;overflow:hidden;}
+        .activeImg ul{height:64px;width:100%;overflow:hidden;}
+        .activeImg li{float:left;margin-right:3px;height:64px;width:64px;overflow:hidden;}
+        .activeImg li img{}
+    </style>
+</head>
+<body>
+    <div id="ActivBase" class="container" style="display:none;"></div>
+    <div id="joinBox" class="container box_1" style="display:none;"></div>
+    <div id="active_imgBox" class="container" style="display:none;"></div>
+    <div id="activePro" class="container" style="display:none;" style="padding-bottom:10px;"></div>
+</body>
+
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/core/iscroll.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript" src="../scripts/active_detail/active_detail.js"></script>
+
+<script type="text/javascript">
+     setPlaceInfo('{"uid":"cd643e508b597b8951e5c578","index":"0"}');
+</script>
+</html>

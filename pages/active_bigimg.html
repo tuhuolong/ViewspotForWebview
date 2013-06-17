@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同城活动图片</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        body{background:#000000;}
+        .imgBox{text-align:center;}
+        .imgBox img{text-align:center;}
+    </style>
+</head>
+<body>
+    <div class="imgBox" id="imgBox"></div>
+</body>
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/core/iscroll.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript">
+        window.templateType = 'active_img';
+
+/*
+ *重置页面内容   
+ */
+function resetPageContent() {
+    if(T.g('Active_pic')){
+        T.g('Active_pic').style.display = 'none';
+    }
+}
+
+function fillData(extD, opts) {
+       
+    var opts = opts || {},
+        type = opts.type || {};
+    if(!extD) return;
+
+    if(window.poiInfo.imgUrl){
+        T.g("imgBox").innerHTML = '<img src="'+window.poiInfo.imgUrl+'"/>'; 
+    }
+
+    
+
+    callAppFun('relayout');
+
+}
+
+
+     setPlaceInfo('{"uid":"370e29449f3c50008d55ecc6","imgUrl":"http://img3.douban.com/pview/event_poster/large/public/a6ab37abcfb73a3.jpg"}');    
+</script>
+</html>

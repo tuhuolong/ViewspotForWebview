@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>活动列表</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/detail.css?v=123" rel="stylesheet" type="text/css" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        #active_list{margin:12px 10px 0px 10px;}
+        #active_list li{position:relative;margin-bottom:12px;}
+        #active_list li .tit{background:#f2f2f2;height:43px;line-height:43px;font-size:16px;text-align:center;padding:0 8px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;border-bottom:1px solid #d9d9d9;border-top-left-radius: 4px;border-top-right-radius: 4px;color:#333333;}
+        div.bottom-effect{bottom:6px;}
+
+        #active_list li div.circle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: url('../img/body_bj.png') #e0ded9;
+            -webkit-background-size: 67px 85px;
+            -webkit-box-sizing: border-box;
+            border-top: 1px solid #bebdb9;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        #active_list li div.circle.left {
+            top: 38px;
+            left: -5px;
+            -webkit-transform: rotate(90deg);
+        }
+        #active_list li div.circle.right {
+            top: 38px;
+            right: -5px;
+            -webkit-transform: rotate(-90deg);
+        }
+        .goDouban{position:absolute;top:122px;right:15px;}
+    </style>
+</head>
+<body>
+    <ul id="active_list" style="padding-bottom:10px;"></ul>
+    <img id="img" src="../img/transparent.gif" style="display:none" />
+</body>
+
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript" src="../scripts/active_list/active_list.js"></script>
+
+<script type="text/javascript">
+     setPlaceInfo('{"uid":"cd643e508b597b8951e5c578"}');    
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="hotel_ota_title">房间报价</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/detail.css" rel="stylesheet" type="text/css" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        .ota_baseInfo{height:105px;background:#faf9f7;border-bottom:1px solid #cbc6be;border-top-left-radius:4px;border-top-right-radius:4px;}
+        .ota_date{height:45px;line-height:45px;margin:0 6px;padding-left:16px; overflow:hidden;background:url('../img/line.png') repeat-x 0 bottom;background-size:250px 1px;-webkit-background-size:250px 1px;color:#635959;margin-bottom:10px;}
+        .ota_date span{margin:0 45px 0 5px; color:#333;}
+        .ota_date span:last-child{margin:0 0px 0 5px;}
+        .ota_baseType{padding:0 0 3px 20px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+        .ota_baseType span{display:inline-block;padding-left:16px;background:url('../img/ota_detail_icon.png') no-repeat 0 bottom;background-size:14px 131px;-webkit-background-size:14px 131px;height:20px;line-height:20px;font-size:12px;color:#888888;margin-right:10px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+         .ota_baseType span.room_type_area{background-position:0px 4px;width:100px;}
+         .ota_baseType span.bed_type{background-position:0px -78px;width:120px;}
+         .ota_baseType span.room_type_floor{background-position:0px -39px;width:100px;}
+         .ota_baseType span.adsl{background-position:0px -115px;width:120px;}
+        .ota_priceInfo{}
+        .ota_priceInfo li{position:relative;margin:0 5px; padding:10px 118px 10px 10px;background:url('../img/line.png') repeat-x 0 bottom;background-size:250px 1px;-webkit-background-size:250px 1px;}
+        .ota_priceInfo li:last-child{background:none;}
+        .ota_priceInfo li h3{font-size:16px;padding:0;margin:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+        .ota_priceInfo li p{font-size:12px;margin-top:1px;color:#8c8c8c;}
+        .ota_priceInfo div{position:absolute;right:0px;top:10px;background:#fff url('../img/goto_v3.png') no-repeat 106px 10px;background-size:7px 12px;-webkit-background-size:7px 12px;width:90px;text-align:right;padding-right:30px;height:40px;overflow:hidden;}
+        .ota_priceInfo div h3{color:#fe0101;}
+        .ota_priceInfo div h3 span{font-size:12px;}
+        .ota_priceInfo div.book_state_2{background:none;}
+        .ota_priceInfo div.book_state_2 h3{color:#fe0101;color:#8c8c8c;}
+        .ota_priceInfo div.book_state_2 h3 span{font-size:12px;margin-left:3px;}
+       </style>
+</head>
+<body>
+    <div style="padding-bottom:25px; background:#E0DED9;">
+        <div class="container box_1" id="ota_detail" style="display:none">
+        </div>
+    </div>
+    <img id="img" src="../img/transparent.gif" style="display:none" />
+</body>
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript" src="../scripts/hotelOta/hotelOta.js"></script>
+<script type="text/javascript">
+     setPlaceInfo('{"uid":"d31f5dcd11f4950232f71d2c","otaUrl":"http://db-map-data02.db01.baidu.com:8008/detail?qt=otaprice&uid=fc7c73d298d5a0218b2fb53e&url=http%253A%252F%252Ftouch.qunar.com%252FbaiduHotelPrice.jsp%253Fbd_source%253Dbaidu_map_hotel%2526city%253D%2526checkInDate%253D2013-01-30%2526checkOutDate%253D2013-01-31%2526seq%253Dbeijing_city_1945%2526room%253D%25E6%2599%25BA%25E9%2580%2589%25E6%25A0%2587%25E5%2587%2586%25E9%2597%25B4%2526hotelName%253D%25E5%258C%2597%25E4%25BA%25AC%25E4%25B8%258A%25E5%259C%25B0%25E6%2599%25BA%25E9%2580%2589%25E5%2581%2587%25E6%2597%25A5%25E9%2585%2592%25E5%25BA%2597%2526hotelPhone%253D%2526hotelAddress%253D%25E5%258C%2597%25E4%25BA%25AC%25E5%25B8%2582%25E6%25B5%25B7%25E6%25B7%2580%25E5%258C%25BA%25E4%25B8%258A%25E5%259C%25B0%25E4%25B8%259C%25E8%25B7%25AF33%25E5%258F%25B7"}');
+</script>
+</html>
+

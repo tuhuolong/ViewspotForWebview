@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>网友推荐</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/detail.css" rel="stylesheet" type="text/css" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        body{
+            background:#000;
+        }
+    </style>
+</head>
+<body>
+    <div id="recommendinfo_index">
+        <div id="recommendinfoCon" class="recommendinfoCon"></div>
+    </div>
+    <div class='recommendinfo_subinfo'>
+        <div class='recommendinfo_subinfo_name' id='recommendinfo_subinfo_name'></div>
+    </div>
+
+    <img id="img" src="../img/transparent.gif" style="display:none" />
+</body>
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/core/iscroll.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript" src="../scripts/recommendinfo/recommendinfo.js"></script>
+<script type="text/javascript">
+//     release.bat 压缩时会自动将 setPlaceInfo 给删除掉;
+//     餐饮
+    //T.g('log').innerHTML += 'getPlaceInfo1';
+    //fillData();
+    //impressionInfo();
+    //T.g('log').innerHTML += 'getPlaceInfo2';
+//     setPlaceInfo('{"uid":"b43aa6e5961641927369d30c","wd":"服务温馨"}');
+     setPlaceInfo('{"uid":"b3d3d81f7379c2a24c6d4618"}');
+     //T.g('log').innerHTML += 'getPlaceInfo3';
+//     酒店case
+//     setPlaceInfo('{"uid":"370e29449f3c50008d55ecc6"}');
+//     休闲娱乐
+//     setPlaceInfo('{"uid":"da2c3f69772eccf023f017cb"}');
+    
+</script>
+</html>

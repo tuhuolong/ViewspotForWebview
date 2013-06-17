@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>万达院线手机验证</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/detail.css" rel="stylesheet" type="text/css" />
+    <!--空style节点不能删除，js会往其中写入内容-->
+    <style>
+        body{background:#f7f7f7;}
+        .container{margin:10px;}
+        .movieLayer{padding-top:10px;}
+        .movieLayerBox{margin:0px 0px;width:100%;}
+        .movieLayer .content{padding:20px 20px;background:#f7f7f7;border-radius:0 0 2px 2px}
+        .showTipMsg{color:#ff1919;font-size:12px;height:20px;line-height:20px;padding-left:56px;}
+        #movieBgbox{position:absolute;left:0;top:0;background:#000;opacity:0.4;z-index:10}
+         .phone_code, .mo_input{padding-left:55px;position:relative;}
+          .mo_input{padding-right:100px;}
+        .mo_input img{position:absolute;right:0;top:0;height:37px;width:90px; vertical-align: -8px;}
+        .phone_code span, .mo_input span{position:absolute; top:0;left:0;height:40px;line-height:40px;color:#9a9a9a;}
+        .phone_code em{position:absolute; top:0;right:0;height:35px;width:35px;display:block;background:url('../img/movieclose.png') no-repeat 6px 9px ;background-size:18px 18px;-webkit-background-size:18px 18px;}
+        .phone_code .inputBox,.mo_input .vcodeBox{height:35px;line-height:35px;color:#999999;border:1px solid #cccccc;border-radius:4px;background:#ffffff;text-indent:10px; }
+
+        .phone_code input, .mo_input input{border:none;height:30px;padding:0 3px;font-size:14px;}
+        .phone_code input{width:130px;}
+        .mo_input input{width:80px;}
+        .movieLayer .btn{padding-left:55px;text-align:left;margin-top:5px;}
+        .movieLayer .btn a{display:block;text-align:center;width:140px;height:36px;border:1px solid #154fb3;border-radius:4px;color:#ffffff;font-size:18px;line-height:36px;background:-webkit-gradient(linear, 0 0 ,0 100%,from(#4d8ff9), to(#2868d7));}
+        .movieLayer .txt{padding-left:55px;margin-top:10px;color:#666;}
+    </style>
+</head>
+<body>
+    <div class="container movieLayer" id="movieLayer" style="display:none"></div>
+    <img id="img" src="../img/transparent.gif" style="display:none" />
+</body>
+<script type="text/javascript" src="../scripts/core/tangram.js"></script>
+<script type="text/javascript" src="../scripts/core/placedatamgr.js"></script>
+<script type="text/javascript" src="../scripts/core/public.js"></script>
+<script type="text/javascript" src="../scripts/core/addStat.js"></script>
+<script type="text/javascript" src="../scripts/core/Template.js"></script>
+<script type="text/javascript" src="../scripts/detail/config.js"></script>
+<script type="text/javascript" src="../scripts/detail/setPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/checkAndSaveData.js"></script>
+<script type="text/javascript" src="../scripts/detail/formatData.js"></script>
+<script type="text/javascript" src="../scripts/detail/getPlaceInfo.js"></script>
+<script type="text/javascript" src="../scripts/detail/makeDataAndSave.js"></script>
+<script type="text/javascript" src="../scripts/detail/fillTemplate.js"></script>
+<script type="text/javascript" src="../scripts/wandamovie/wandamoviecheck.js"></script>
+<script type="text/javascript">
+     setPlaceInfo('{"uid":"d31f5dcd11f4950232f71d2c","third_from":"xx","seq_no":"xx","cinema_id":"xx","date":"xx","third_from":"xx","movie_id":"xx"}');
+</script>
+</html>
+
