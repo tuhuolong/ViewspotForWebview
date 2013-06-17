@@ -426,6 +426,23 @@ BMap.Viewspot.NearbySearch = function(container, extD, option)
     var _extD = extD;
     var _option = option ? option : {};
 
+    var _dom = {};
+    var _getDom = function(){return _dom;};
+
+    var _titleDiv = {};
+    var _box1Div = {};
+    var _listUl = {};
+    var _item1Li = {};
+    var _item2Li = {};
+    var _item3Li = {};
+    var _item4Li = {};
+    var _item5Li = {};
+    var _item6Li = {};
+    var _bottomDiv = {};
+    var _bottomSubDiv = {};
+    var _bottomSpan = {};
+    var _bottomA = {};
+
     var _initialize = function() {
         var shop;
 
@@ -457,10 +474,121 @@ BMap.Viewspot.NearbySearch = function(container, extD, option)
         html.push('<div class="splitLine2"></div>');
 
 
-        _container.innerHTML = html.join('');
+        //_container.innerHTML = html.join('');
 
         _container.style.display = 'block';
 
+        _dom = document.createElement('div');
+
+        _titleDiv = document.createElement('div');
+        _titleDiv.className = "h3";
+        _titleDiv.innerHTML = "在该点附近找";
+        _dom.appendChild(_titleDiv);
+
+        _box1Div = document.createElement('div');
+        _box1Div.className = "box_1"; 
+        _dom.appendChild(_box1Div);
+
+        _listUl = document.createElement('ul');
+        _listUl.id = "vicinityShopBox";
+        _listUl.className = "c_list";
+        _box1Div.appendChild(_listUl);
+
+        var tmpDiv = {};
+        var tmpSpan1 = {};
+        var tmpSpan2 = {};
+
+        _item1Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon fineFood";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "美食";
+        tmpDiv.appendChild(tmpSpan2);
+        _item1Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item1Li);
+
+        _item2Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon snack";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "小吃快餐";
+        tmpDiv.appendChild(tmpSpan2);
+        _item2Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item2Li);
+
+        _item3Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon innHotel";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "快捷酒店";
+        tmpDiv.appendChild(tmpSpan2);
+        _item3Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item3Li);
+
+        _item4Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon starHotel";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "星级酒店";
+        tmpDiv.appendChild(tmpSpan2);
+        _item4Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item4Li);
+
+        _item5Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon busStation";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "公交站";
+        tmpDiv.appendChild(tmpSpan2);
+        _item5Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item5Li);
+
+        _item6Li = document.createElement('li');
+        tmpDiv = document.createElement('div');
+        tmpSpan1 = document.createElement('span');
+        tmpSpan1.className = "icon bank";
+        tmpDiv.appendChild(tmpSpan1);
+        tmpSpan2 = document.createElement('span');
+        tmpSpan2.className = "text";
+        tmpSpan2.innerHTML = "银行";
+        tmpDiv.appendChild(tmpSpan2);
+        _item6Li.appendChild(tmpDiv);
+        _listUl.appendChild(_item6Li);
+
+        _bottomDiv = document.createElement('div');
+        _bottomDiv.className = "bottom_nav bottom_nav_1";
+        _box1Div.appendChild(_bottomDiv);
+
+
+        _bottomSubDiv = document.createElement('div');
+        _bottomDiv.appendChild(_bottomSubDiv);
+
+        _bottomSpan = document.createElement('span');
+        _bottomSubDiv.appendChild(_bottomSpan);
+
+        _bottomA = document.createElement('a');
+        _bottomA.href = "javascript:void(0)";
+        _bottomA.innerHTML = "查看更多<em class=\'goto_icon_1\''></em>";
+        _bottomSpan.appendChild(_bottomA);
+
+
+        _container.appendChild(_dom);
+        _container.style.display = 'block';
     };
 
     (function() {
